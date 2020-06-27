@@ -72,10 +72,11 @@ Returns the pemutations of the given input. This utilizes Heap's Algorithm for g
 console.log(permutationLib.permutation([1,2,3]))
 //=> [ [ 1, 2, 3 ],
 //     [ 2, 1, 3 ],
-//     [ 3, 2, 1 ],
+//     [ 3, 1, 2 ],
+//     [ 1, 3, 2 ],
 //     [ 2, 3, 1 ],
-//     [ 1, 2, 3 ],
-//     [ 2, 1, 3 ] ]
+//     [ 3, 2, 1 ]
+//   ]
 ```
 
 ### Getting N permutations
@@ -92,6 +93,7 @@ console.log(permutationLib.kPermutations([1,2,3,4,5], 3))
 console.log(permutationLib.nPermutations([1,2,3,4,5], 3).length)
 //=> 60
 ```
+
 ## Probability Helper
 ### P(X and Y)
 Probability of X and Y occuring (Assuming X and Y are independent).
@@ -193,7 +195,7 @@ console.log(statsLib.absolutePercentile(80, [5,3,1,4,2,3,4,5,7,7,7]));
 //=> 5
 ```
 
-### Percentile given value and input array
+### Z-score of an value, mean and standard deviation
 Returns a value representing the percentile of a value and a given input. Value does not have to be in the input, a Z-score calculation and lookup occurs. Returns _undefined_ if input is not a number.
 ```
 console.log(statsLib.percentileFromMeanAndStdev(5, 5.5, 3));
@@ -211,7 +213,7 @@ console.log(statsLib.zScore(10, [5,3,1,4,2,3,4,5,7,7,7]));
 //=> 2.8659510138303506
 ```
 
-### Z-score of an value, mean and standard deviation
+### Percentile given value and input array
 Returns a value representing the Z-score of the mean and standard deviaiton. Returns _undefined_ if input is not a number.
 ```
 console.log(statsLib.percentile(13, [1,2,3,4,5,6,7,8,9,10], opt={"population": false}));

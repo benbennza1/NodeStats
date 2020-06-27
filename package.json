@@ -1,6 +1,6 @@
 {
   "name": "@jeremyqzt/nodestats",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helper methods for stats, combinatorics, permutations and probabilities",
   "main": "index.js",
   "scripts": {
