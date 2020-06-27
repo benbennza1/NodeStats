@@ -22,7 +22,7 @@ class statsLib{
      * @return {number} Numerical value representing the geometric sum of all array elements
      */
     static geometricSum(inArr){
-        if (!inArr.length){
+        if (inArr.length === 0){
             return 0;
         }
         let total = inArr[0];
@@ -119,7 +119,7 @@ class statsLib{
         }
         let newArr = [...inArr];
         newArr.sort(function(a, b) {return a - b;});
-        let idxRank = Math.floor((percentile / 100) * newArr.length) - 1;
+        let idxRank = Math.round((percentile / 100) * newArr.length) - 1;
         return newArr[idxRank];
     }
 

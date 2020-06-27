@@ -135,14 +135,14 @@ class combinationLib{
         let r = 0;
 
         if (k > N){
-            return inArr;
+            return [inArr];
         }
 
         while (r >= 0){
             if (i <= (N + (r - k))){
                 pointers[r] = i;
                 
-                if (r == k-1){
+                if (r === k-1){
                     let newComb = []
                     for (let j = 0; j < pointers.length; j++){
                         newComb.push(inArr[pointers[j]]);

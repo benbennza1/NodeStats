@@ -1,4 +1,6 @@
 # Node Stats Helpers
+[![Build Status](https://travis-ci.com/jeremyqzt/NodeStats.svg?branch=master)](https://travis-ci.com/jeremyqzt/NodeStats) [![Coverage Status](https://coveralls.io/repos/github/jeremyqzt/NodeStats/badge.svg?branch=master)](https://coveralls.io/github/jeremyqzt/NodeStats?branch=master)
+
 This is a library that helps with some common stats operations. We support the following:
  * Combinations
    *  Counting number of combinations
@@ -11,12 +13,13 @@ This is a library that helps with some common stats operations. We support the f
  * Z-score table (From -3.99 to 3.99)
  * Simple probability calculations
 
-Example Usages below.
+Full Docs can be found at [our git pages](https://jeremyqzt.github.io/NodeStats/).
+Example usages are as followed.
 
 ## Importing
 The libraries can be imported using the following.
 ```
-const {probabilityLib, statsLib, combinationLib, permutationLib} = require('nodestats');
+const {probabilityLib, statsLib, combinationLib, permutationLib} = require('@jeremyqzt/nodestats');
 ```
 
 ## Combination Helper
