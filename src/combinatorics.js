@@ -109,6 +109,39 @@ class permutationLib{
 class combinationLib{
 
     /**
+     * Evaluates statistical correlation of two arrays.
+     * @param {number[]} inArr - Input to find power sets for
+     * @return {array} Array of Sets representing all power sets.
+     */
+    static powerSet(inArr){
+        let ret = [];
+        const psFunc = (items) =>{
+            let N = items.length;
+        
+            for (let i = 0; i < Math.pow(2, N); i++){
+                let comb=[]
+                for (let j = 0; j < N; j++){
+                    if ((i >> j) % 2 == 1){
+                        comb.push(items[j]);
+                    }
+                }
+                ret.push(new Set(comb));
+            }
+        }
+        psFunc(inArr);
+        return ret;
+    }
+
+    /**
+     * Evaluates the number of power sets with the given size
+     * @param {number} size - Input to find power sets for
+     * @return {number} Numerical value representing the evaluation for the number of power sets
+     */
+    static countPowerSet(size){
+        return Math.pow(2, size);
+    }
+
+    /**
      * Counts the number of permutations using n choose r (nCr).
      * @param {number} n - The n value in nCr
      * @param {number} r - The r value in nCr

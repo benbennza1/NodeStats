@@ -5,11 +5,17 @@ This is a library that helps with some common stats operations. We support the f
  * Combinations
    *  Counting number of combinations
    *  Getting an array of k-combinations
+   *  Getting all power sets
  * Permutations
     *  Counting number of permutations
     *  Getting an array of k-permutations
     *  Getting an array of all permutations
- * Statical Calculation (mean, median, mode, stdev, percentiles, etc...)
+ * Statical Calculation
+    * Mean, Median, Mode
+    * Geometric means
+    * Standard deviation (sample or population)
+    * Z-Score from mean/standard deviation or input
+    * Correlation
  * Z-score table (From -3.99 to 3.99)
  * Simple probability calculations
 
@@ -47,6 +53,25 @@ console.log(combinationLib.combinations([1,2,3,4,5,6,7,8,9,10],7).length)
 //=> 120
 ```
 
+### Counting number of power sets
+Returns the combinations of the given input. This utilizes the Forward-Backward Algorithm for generating combinations.
+```
+console.log(combinationLib.countPowerSet(6));
+//=> 64
+```
+
+### Getting the power sets
+Returns the combinations of the given input. This utilizes the Forward-Backward Algorithm for generating combinations.
+```
+console.log(combinationLib.powerSet([1,2,3,4,5]));
+//=> [ Set {},
+//     Set { 1 },
+//     Set { 2 },
+//     Set { 1, 2 }, 
+//     Set { 3 }, 
+//     Set { 1, 3 }, 
+//     ...26 more
+```
 
 ## Permutation Helper
 
@@ -231,4 +256,15 @@ console.log(statsLib.zScorePercentile(3.99));
 //=> 0.99997
 console.log(statsLib.zScorePercentile(-2.1));
 //=> 0.01786
+```
+
+### Correlations
+Returns a value representing the correlatio between 2 arrays
+```
+console.log(statsLib.correlation([1,2,3,4,5], [1,2,3,4,5]))
+//=> 1
+console.log(statsLib.correlation([1,2,3,4,5], [-1,-2,-3,-4,-5]))
+//=> -1
+console.log(statsLib.correlation([1,4,9,5,3], [-1,-2,-3,-4,-5]))
+//=> -0.266500895444513
 ```

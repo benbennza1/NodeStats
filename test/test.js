@@ -161,6 +161,37 @@ describe('Permutation Test', () => {
     });
    });
 
+   describe('Power Set Test', () => {
+    let testDesc = "Power Set Test";
+    let len = 6;
+    let simpleTestIdx = 1;
+    let testData = Array.from(new Set(Array.from({length: len}, () => Math.floor(Math.random() * 100))));
+    let testOutput = combinationLib.powerSet(testData);
+
+    it(`${testDesc} ${simpleTestIdx}: ${testData.length}C${len2} = ${testOutput.length}`, () => {
+           assert.equal(testOutput.length, combinationLib.countPowerSet(testData.length));
+    });
+
+    const setSameOrMisMatch = (as, bs) => {
+        if (as.size !== bs.size){
+            return false;
+        }
+        for (var a of as) if (!bs.has(a)){
+            return false;
+        }
+        return true;
+    }
+
+    simpleTestIdx++;
+    it(`${testDesc} ${simpleTestIdx}: Asserting difference between ${testOutput.length} outputs`, () => {
+        for (let j = 0; j < testOutput.length; j++){
+            for (let z = 0; z < testOutput.length; z++){
+                if (z === j) {continue;}
+                assert(!setSameOrMisMatch(testOutput[z], testOutput[j]));
+            } 
+        } 
+    });
+   });
 
    describe('Statistics Test', () => {
     let testDesc = "Statistics Test";
@@ -271,6 +302,13 @@ describe('Permutation Test', () => {
         assert.equal("0.76", statsLib.percentile(4 ,[1,2,3,4,5], opt={"population": true}).toFixed(2));
         //1.5811388300842, 3 1/1.58 = 0.63
         assert.equal("0.74", statsLib.percentile(4 ,[1,2,3,4,5], opt={"population": false}).toFixed(2));
+    });
+
+    simpleTestIdx++;
+
+    it(`${testDesc} ${simpleTestIdx}: Simple Correlation Test`, () => {
+        assert.equal(1, statsLib.correlation([1,2,3], [1,2,3]));
+        assert.equal("0.51", statsLib.correlation([2,4,5,76,8,1], [-1,-4,7,8,2,6]).toFixed(2));
     });
    });
 
@@ -396,4 +434,8 @@ describe('Permutation Test', () => {
         assert.equal(0, probabilityLib.XgivenNotY(0, -1.5));
     });
     simpleTestIdx++;
+
+    it(`${testDesc} ${simpleTestIdx}`, () => {
+        assert.equal(0, statsLib.correlation([1], [1,2]));
+    });
    });
