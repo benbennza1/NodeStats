@@ -55,7 +55,7 @@ describe('Permutation Test', () => {
 
    describe('kPermutation Test', () => {
     let testDesc = "kPermutation Test";
-    let len = 6;
+    let len = 7;
     let simpleTestIdx = 1;
     let testData = Array.from(new Set(Array.from({length: len}, () => Math.floor(Math.random() * 100))));
     len = testData.length;
