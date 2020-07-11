@@ -54,14 +54,14 @@ console.log(combinationLib.combinations([1,2,3,4,5,6,7,8,9,10],7).length)
 ```
 
 ### Counting number of power sets
-Returns the combinations of the given input. This utilizes the Forward-Backward Algorithm for generating combinations.
+Returns the number of combinations of the given input.
 ```
 console.log(combinationLib.countPowerSet(6));
 //=> 64
 ```
 
 ### Getting the power sets
-Returns the combinations of the given input. This utilizes the Forward-Backward Algorithm for generating combinations.
+Returns the powersets of the given input.
 ```
 console.log(combinationLib.powerSet([1,2,3,4,5]));
 //=> [ Set {},
